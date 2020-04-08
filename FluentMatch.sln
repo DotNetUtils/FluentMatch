@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30002.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentMatch", "FluentMatch\FluentMatch.csproj", "{159A2FFA-E213-4CAD-882B-7DAEABE47BB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentMatch.Tests", "FluentMatch.Tests\FluentMatch.Tests.csproj", "{E19511AE-90D7-46B3-BCC1-5B9CD1111F4B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{159A2FFA-E213-4CAD-882B-7DAEABE47BB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{159A2FFA-E213-4CAD-882B-7DAEABE47BB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{159A2FFA-E213-4CAD-882B-7DAEABE47BB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{159A2FFA-E213-4CAD-882B-7DAEABE47BB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E19511AE-90D7-46B3-BCC1-5B9CD1111F4B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E19511AE-90D7-46B3-BCC1-5B9CD1111F4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E19511AE-90D7-46B3-BCC1-5B9CD1111F4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E19511AE-90D7-46B3-BCC1-5B9CD1111F4B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1BED29F6-9102-4A37-B0A3-0774AAFF3EA2}
+	EndGlobalSection
+EndGlobal
