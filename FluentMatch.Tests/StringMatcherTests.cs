@@ -23,7 +23,7 @@ namespace DotNetUtils.FluentMatch.Tests
         [InlineData(_cultureEquivalentStringUpperCase, false)]
         public void Matches_Ordinal(string input, bool expected)
         {
-            StringMatcher matcher = new StringMatcher(_testString, StringComparison.Ordinal);
+            StringMatcher matcher = StringMatch.Equals(_testString, StringComparison.Ordinal);
             bool result = matcher.Matches(input);
             Assert.Equal(expected, result);
         }
@@ -38,7 +38,7 @@ namespace DotNetUtils.FluentMatch.Tests
         [InlineData(_cultureEquivalentStringUpperCase, false)]
         public void Matches_OrdinalIgnoreCase(string input, bool expected)
         {
-            StringMatcher matcher = new StringMatcher(_testString, StringComparison.OrdinalIgnoreCase);
+            StringMatcher matcher = StringMatch.Equals(_testString, StringComparison.OrdinalIgnoreCase);
             bool result = matcher.Matches(input);
             Assert.Equal(expected, result);
         }
@@ -53,7 +53,7 @@ namespace DotNetUtils.FluentMatch.Tests
         [InlineData(_cultureEquivalentStringUpperCase, false)]
         public void Matches_CurrentCulture(string input, bool expected)
         {
-            StringMatcher matcher = new StringMatcher(_testString, StringComparison.CurrentCulture);
+            StringMatcher matcher = StringMatch.Equals(_testString, StringComparison.CurrentCulture);
             bool result = matcher.Matches(input);
             Assert.Equal(expected, result);
         }
@@ -68,7 +68,7 @@ namespace DotNetUtils.FluentMatch.Tests
         [InlineData(_cultureEquivalentStringUpperCase, true)]
         public void Matches_CurrentCultureIgnoreCase(string input, bool expected)
         {
-            StringMatcher matcher = new StringMatcher(_testString, StringComparison.CurrentCultureIgnoreCase);
+            StringMatcher matcher = StringMatch.Equals(_testString, StringComparison.CurrentCultureIgnoreCase);
             bool result = matcher.Matches(input);
             Assert.Equal(expected, result);
         }
@@ -76,18 +76,9 @@ namespace DotNetUtils.FluentMatch.Tests
         [Fact]
         public void Matches_NullReturnsFalse()
         {
-            StringMatcher matcher = new StringMatcher(_testString, StringComparison.OrdinalIgnoreCase);
+            StringMatcher matcher = StringMatch.Equals(_testString);
             bool result = matcher.Matches(null);
             Assert.False(result);
-        }
-
-        [Fact]
-        public void Constructor_EdgeCase_ThrowsArgumentNullException()
-        {
-            Assert.Throws<ArgumentNullException>
-            (
-                () => new StringMatcher(null, StringComparison.OrdinalIgnoreCase)
-            );
         }
     }
 }

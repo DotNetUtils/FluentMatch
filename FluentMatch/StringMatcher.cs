@@ -16,7 +16,7 @@ namespace DotNetUtils.FluentMatch
         /// <param name="value">The value this instance should attempt to match.</param>
         /// <param name="comparison">The <see cref="StringComparison" /> to use when matching input strings.</param>
         /// <exception cref="ArgumentNullException"><paramref name="value" /> is null.</exception>
-        public StringMatcher(string value, StringComparison comparison)
+        internal StringMatcher(string value, StringComparison comparison)
         {
             _value = value ?? throw new ArgumentNullException(nameof(value));
             _comparison = comparison;
