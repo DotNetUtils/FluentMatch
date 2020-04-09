@@ -29,5 +29,74 @@ namespace DotNetUtils.FluentMatch
         {
             return new EqualsStringMatcher(value, comparison);
         }
+
+        /// <summary>
+        /// Initializes a new <see cref="StringMatcher" /> based on substring matching
+        /// using an ordinal case-insensitive comparison.
+        /// </summary>
+        /// <param name="value">The value this instance should attempt to match.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="value" /> is null.</exception>
+        public static StringMatcher Contains(string value)
+        {
+            return new ContainsStringMatcher(value, StringComparison.OrdinalIgnoreCase);
+        }
+
+        /// <summary>
+        /// Initializes a new <see cref="StringMatcher" /> based on substring matching
+        /// using the specified <see cref="StringComparison" />.
+        /// </summary>
+        /// <param name="value">The value this instance should attempt to match.</param>
+        /// <param name="comparison">The <see cref="StringComparison" /> to use when matching input strings.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="value" /> is null.</exception>
+        public static StringMatcher Contains(string value, StringComparison comparison)
+        {
+            return new ContainsStringMatcher(value, comparison);
+        }
+
+        /// <summary>
+        /// Initializes a new <see cref="StringMatcher" /> based on a starting substring
+        /// using an ordinal case-insensitive comparison.
+        /// </summary>
+        /// <param name="value">The value this instance should attempt to match.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="value" /> is null.</exception>
+        public static StringMatcher StartsWith(string value)
+        {
+            return new StartsWithStringMatcher(value, StringComparison.OrdinalIgnoreCase);
+        }
+
+        /// <summary>
+        /// Initializes a new <see cref="StringMatcher" /> based on a starting substring
+        /// using the specified <see cref="StringComparison" />.
+        /// </summary>
+        /// <param name="value">The value this instance should attempt to match.</param>
+        /// <param name="comparison">The <see cref="StringComparison" /> to use when matching input strings.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="value" /> is null.</exception>
+        public static StringMatcher StartsWith(string value, StringComparison comparison)
+        {
+            return new StartsWithStringMatcher(value, comparison);
+        }
+
+        /// <summary>
+        /// Initializes a new <see cref="StringMatcher" /> based on an ending substring
+        /// using an ordinal case-insensitive comparison.
+        /// </summary>
+        /// <param name="value">The value this instance should attempt to match.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="value" /> is null.</exception>
+        public static StringMatcher EndsWith(string value)
+        {
+            return new EndsWithStringMatcher(value, StringComparison.OrdinalIgnoreCase);
+        }
+
+        /// <summary>
+        /// Initializes a new <see cref="StringMatcher" /> based on an ending substring
+        /// using the specified <see cref="StringComparison" />.
+        /// </summary>
+        /// <param name="value">The value this instance should attempt to match.</param>
+        /// <param name="comparison">The <see cref="StringComparison" /> to use when matching input strings.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="value" /> is null.</exception>
+        public static StringMatcher EndsWith(string value, StringComparison comparison)
+        {
+            return new EndsWithStringMatcher(value, comparison);
+        }
     }
 }

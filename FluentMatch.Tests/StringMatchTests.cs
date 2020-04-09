@@ -12,7 +12,13 @@ namespace DotNetUtils.FluentMatch.Tests
             List<Func<string, StringMatcher>> generators = new List<Func<string, StringMatcher>>
             {
                 n => StringMatch.Equals(n),
-                n => StringMatch.Equals(n, StringComparison.Ordinal)
+                n => StringMatch.Equals(n, StringComparison.Ordinal),
+                n => StringMatch.Contains(n),
+                n => StringMatch.Contains(n, StringComparison.Ordinal),
+                n => StringMatch.StartsWith(n),
+                n => StringMatch.StartsWith(n, StringComparison.Ordinal),
+                n => StringMatch.EndsWith(n),
+                n => StringMatch.EndsWith(n, StringComparison.Ordinal)
             };
 
             return generators.Select(n => new object[] { n });
