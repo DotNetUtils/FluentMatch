@@ -3,7 +3,7 @@ using Xunit;
 
 namespace DotNetUtils.FluentMatch.Tests
 {
-    public sealed class StringMatcherTests
+    public sealed class EqualsStringMatcherTests
     {
         private const string _testString = "encyclopaedia";
         private const string _testStringUpperCase = "ENCYCLOPAEDIA";

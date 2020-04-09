@@ -8,18 +8,18 @@ namespace DotNetUtils.FluentMatch
     public static class StringMatch
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="StringMatcher" /> class
+        /// Initializes a new <see cref="StringMatcher" /> based on full-string matching
         /// using an ordinal case-insensitive comparison.
         /// </summary>
         /// <param name="value">The value this instance should attempt to match.</param>
         /// <exception cref="ArgumentNullException"><paramref name="value" /> is null.</exception>
         public static StringMatcher Equals(string value)
         {
-            return new StringMatcher(value, StringComparison.OrdinalIgnoreCase);
+            return new EqualsStringMatcher(value, StringComparison.OrdinalIgnoreCase);
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="StringMatcher" /> class
+        /// Initializes a new <see cref="StringMatcher" /> based on full-string matching
         /// using the specified <see cref="StringComparison" />.
         /// </summary>
         /// <param name="value">The value this instance should attempt to match.</param>
@@ -27,7 +27,7 @@ namespace DotNetUtils.FluentMatch
         /// <exception cref="ArgumentNullException"><paramref name="value" /> is null.</exception>
         public static StringMatcher Equals(string value, StringComparison comparison)
         {
-            return new StringMatcher(value, comparison);
+            return new EqualsStringMatcher(value, comparison);
         }
     }
 }
