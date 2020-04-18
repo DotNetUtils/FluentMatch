@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using Xunit;
 
 namespace DotNetUtils.FluentMatch.Tests
@@ -18,7 +19,10 @@ namespace DotNetUtils.FluentMatch.Tests
                 n => StringMatch.StartsWith(n),
                 n => StringMatch.StartsWith(n, StringComparison.Ordinal),
                 n => StringMatch.EndsWith(n),
-                n => StringMatch.EndsWith(n, StringComparison.Ordinal)
+                n => StringMatch.EndsWith(n, StringComparison.Ordinal),
+                n => StringMatch.Regex(n),
+                n => StringMatch.Regex(n, RegexOptions.None),
+                n => StringMatch.Regex(null as Regex)
             };
 
             return generators.Select(n => new object[] { n });

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace DotNetUtils.FluentMatch
 {
@@ -97,6 +98,42 @@ namespace DotNetUtils.FluentMatch
         public static StringMatcher EndsWith(string value, StringComparison comparison)
         {
             return new EndsWithStringMatcher(value, comparison);
+        }
+
+        /// <summary>
+        /// Initializes a new <see cref="StringMatcher" /> based on a regular expression.
+        /// </summary>
+        /// <param name="pattern">The regular expression pattern to use for matching strings.</param>
+        /// <exception cref="ArgumentException"><paramref name="pattern" /> is not a valid regular expression.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="pattern" /> is null.</exception>
+        public static StringMatcher Regex(string pattern)
+        {
+            Regex regex = new Regex(pattern);
+            return new RegexMatcher(regex);
+        }
+
+        /// <summary>
+        /// Initializes a new <see cref="StringMatcher" /> based on a regular expression.
+        /// </summary>
+        /// <param name="pattern">The regular expression pattern to use for matching strings.</param>
+        /// <param name="options">The <see cref="RegexOptions" /> to use for regular expression testing.</param>
+        /// <exception cref="ArgumentException"><paramref name="pattern" /> is not a valid regular expression.</exception>
+        /// <exception cref="ArgumentNullException"><paramref name="pattern" /> is null.</exception>
+        /// <exception cref="ArgumentOutOfRangeException"><paramref name="options" /> contains an invalid flag.</exception>
+        public static StringMatcher Regex(string pattern, RegexOptions options)
+        {
+            Regex regex = new Regex(pattern, options);
+            return new RegexMatcher(regex);
+        }
+
+        /// <summary>
+        /// Initializes a new <see cref="StringMatcher" /> based on a regular expression.
+        /// </summary>
+        /// <param name="regex">The <see cref="System.Text.RegularExpressions.Regex" /> to use for matching strings.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="regex" /> is null.</exception>
+        public static StringMatcher Regex(Regex regex)
+        {
+            return new RegexMatcher(regex);
         }
     }
 }
