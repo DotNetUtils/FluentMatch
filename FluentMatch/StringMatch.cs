@@ -135,5 +135,15 @@ namespace DotNetUtils.FluentMatch
         {
             return new RegexMatcher(regex);
         }
+
+        /// <summary>
+        /// Initializes a new <see cref="StringMatcher" /> based on the specified predicate function.
+        /// </summary>
+        /// <param name="predicate">The predicate function to use for matching strings.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="predicate" /> is null.</exception>
+        public static StringMatcher Where(Func<string, bool> predicate)
+        {
+            return new PredicateStringMatcher(predicate);
+        }
     }
 }

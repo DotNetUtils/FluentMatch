@@ -22,7 +22,8 @@ namespace DotNetUtils.FluentMatch.Tests
                 n => StringMatch.EndsWith(n, StringComparison.Ordinal),
                 n => StringMatch.Regex(n),
                 n => StringMatch.Regex(n, RegexOptions.None),
-                n => StringMatch.Regex(null as Regex)
+                n => StringMatch.Regex(null as Regex),
+                n => StringMatch.Where(null)
             };
 
             return generators.Select(n => new object[] { n });
