@@ -145,5 +145,37 @@ namespace DotNetUtils.FluentMatch
         {
             return new PredicateStringMatcher(predicate);
         }
+
+        /// <summary>
+        /// Initializes a new <see cref="StringMatcher" /> that matches only null values.
+        /// </summary>
+        public static StringMatcher IsNull()
+        {
+            return new NullStringMatcher(true);
+        }
+
+        /// <summary>
+        /// Initializes a new <see cref="StringMatcher" /> that matches only non-null values.
+        /// </summary>
+        public static StringMatcher IsNotNull()
+        {
+            return new NullStringMatcher(false);
+        }
+
+        /// <summary>
+        /// Initializes a new <see cref="StringMatcher" /> that matches only null or empty values.
+        /// </summary>
+        public static StringMatcher IsNullOrEmpty()
+        {
+            return new NullOrEmptyStringMatcher(true);
+        }
+
+        /// <summary>
+        /// Initializes a new <see cref="StringMatcher" /> that matches only non-null and non-empty values.
+        /// </summary>
+        public static StringMatcher IsNotNullOrEmpty()
+        {
+            return new NullOrEmptyStringMatcher(false);
+        }
     }
 }
