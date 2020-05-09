@@ -23,5 +23,12 @@ namespace DotNetUtils.FluentMatch.Tests
             static object callOrWithNull() => new AnyStringMatcher().Or(null);
             Assert.Throws<ArgumentNullException>(callOrWithNull);
         }
+
+        [Fact]
+        public void WithTransform_ThrowsNullArgumentException()
+        {
+            static object callWithTransformWithNull() => new AnyStringMatcher().WithTransform(null);
+            Assert.Throws<ArgumentNullException>(callWithTransformWithNull);
+        }
     }
 }

@@ -44,5 +44,20 @@ namespace DotNetUtils.FluentMatch
 
             return new OrStringMatcher(this, alternateStringMatcher);
         }
+
+        /// <summary>
+        /// Defines a transformation function that will be applied to input strings before matching.
+        /// </summary>
+        /// <param name="transformFunction">The transformation to apply to input strings.</param>
+        /// <exception cref="ArgumentNullException"><paramref name="transformFunction" /> is null.</exception>
+        public StringMatcher WithTransform(Func<string, string> transformFunction)
+        {
+            if (transformFunction is null)
+            {
+                throw new ArgumentNullException(nameof(transformFunction));
+            }
+
+            return new TransformStringMatcher(this, transformFunction);
+        }
     }
 }
