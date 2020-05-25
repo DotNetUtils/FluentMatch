@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using Xunit;
 
-namespace DotNetUtils.FluentMatch.Tests
+namespace FluentMatch.Tests
 {
     public sealed class StringMatchTests
     {

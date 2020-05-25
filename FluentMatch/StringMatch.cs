@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace DotNetUtils.FluentMatch
+namespace FluentMatch
 {
     /// <summary>
     /// Contains methods to construct <see cref="StringMatcher" /> objects.

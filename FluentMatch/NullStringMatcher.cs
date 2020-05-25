@@ -1,4 +1,4 @@
-﻿namespace DotNetUtils.FluentMatch
+﻿namespace FluentMatch
 {
     /// <summary>
     /// A <see cref="StringMatcher" /> implementation that matches an input

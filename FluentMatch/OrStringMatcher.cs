@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DotNetUtils.FluentMatch
+namespace FluentMatch
 {
     /// <summary>
     /// A <see cref="StringMatcher" /> implementation that tests an input against two other string matchers

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
 
-namespace DotNetUtils.FluentMatch
+namespace FluentMatch
 {
     /// <summary>
     /// A <see cref="StringMatcher" /> implementation that matches an input

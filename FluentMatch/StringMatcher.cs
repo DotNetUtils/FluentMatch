@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DotNetUtils.FluentMatch
+namespace FluentMatch
 {
     /// <summary>
     /// Provides methods for string matching based on implementation-specific logic.

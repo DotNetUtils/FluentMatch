@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Xunit;
 
-namespace DotNetUtils.FluentMatch.Tests
+namespace FluentMatch.Tests
 {
     public sealed class StringMatcherBaseTests
     {

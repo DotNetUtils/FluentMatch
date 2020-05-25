@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DotNetUtils.FluentMatch
+namespace FluentMatch
 {
     /// <summary>
     /// A <see cref="StringMatcher" /> implementation that applies a transformation function
