@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace DotNetUtils.FluentMatch
 {
@@ -14,6 +16,54 @@ namespace DotNetUtils.FluentMatch
         /// <param name="input">The <see cref="string" /> input to test.</param>
         /// <returns><c>true</c> if this instance matches the specified input string; otherwise, <c>false</c>.</returns>
         public abstract bool Matches(string input);
+
+        /// <summary>
+        /// Determines whether this <see cref="StringMatcher" /> matches any of the specified input strings.
+        /// </summary>
+        /// <param name="inputs">The collection of input strings to test.</param>
+        /// <returns><c>true</c> if this instance matches any of the specified input strings; otherwise, <c>false</c>.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="inputs" /> is null.</exception>
+        public bool MatchesAny(IEnumerable<string> inputs)
+        {
+            if (inputs is null)
+            {
+                throw new ArgumentNullException(nameof(inputs));
+            }
+
+            return inputs.Any(n => Matches(n));
+        }
+
+        /// <summary>
+        /// Determines whether this <see cref="StringMatcher" /> matches all of the specified input strings.
+        /// </summary>
+        /// <param name="inputs">The collection of input strings to test.</param>
+        /// <returns><c>true</c> if this instance matches all of the specified input strings; otherwise, <c>false</c>.</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="inputs" /> is null.</exception>
+        public bool MatchesAll(IEnumerable<string> inputs)
+        {
+            if (inputs is null)
+            {
+                throw new ArgumentNullException(nameof(inputs));
+            }
+
+            return inputs.All(n => Matches(n));
+        }
+
+        /// <summary>
+        /// Finds all of the specified input strings that this <see cref="StringMatcher" /> matches.
+        /// </summary>
+        /// <param name="inputs">The collection of input strings to test.</param>
+        /// <returns>A collection containing all the matching input strings.  (This collection uses deferred execution.)</returns>
+        /// <exception cref="ArgumentNullException"><paramref name="inputs" /> is null.</exception>
+        public IEnumerable<string> FindMatches(IEnumerable<string> inputs)
+        {
+            if (inputs is null)
+            {
+                throw new ArgumentNullException(nameof(inputs));
+            }
+
+            return inputs.Where(n => Matches(n));
+        }
 
         /// <summary>
         /// Adds an additional <see cref="StringMatcher" /> that must also be satisfied for an input to match.
